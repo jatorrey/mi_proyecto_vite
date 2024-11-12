@@ -5,10 +5,16 @@ import './share/css/allPages.css'
 //FIC: Add
 import AppAllModules from './AppAllModules';
 //import AppDemo from './AppDemo';
+//FIC: For Redux
+import { Provider } from "react-redux";
+import store from '../src/security/redux/store/store';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <AppAllModules /> 
-    {/*  <AppDemo />  */}
+    <Provider store={store}>
+      <AppAllModules />
+      {/*  <AppDemo />  */}
+    </Provider>
   </React.StrictMode>,
-)
+);
